@@ -10,9 +10,20 @@ function sortear(){
     let listaSorteio = [];
     let numero;
 
+    if(numeroLimiteInicio >= numeroLimiteFinal){
+        document.getElementById('de').value = '';
+        document.getElementById('ate').value = '';
+        document.getElementById('resultado').innerHTML = `<label class="texto__paragrafo"> O número inicial: ${numeroLimiteInicio} é maior que o número final: ${numeroLimiteFinal}, insira novos valores.`;
+        return;
+    }
+
     for (let i = 0; i < quantNumerosSorteados; i++){
         numero = obterNumeroAleatorio(numeroLimiteInicio, numeroLimiteFinal);
-
+        if(listaSorteio.length == numeroLimiteFinal - numeroLimiteInicio){
+            numero = obterNumeroAleatorio();
+            listaSorteio.push(numero);
+            continue;
+        }
         while(listaSorteio.includes(numero)){
             numero = obterNumeroAleatorio(numeroLimiteInicio, numeroLimiteFinal);
         }
