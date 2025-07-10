@@ -10,26 +10,25 @@ function sortear(){
     let listaSorteio = [];
     let numero;
 
-    if(numeroLimiteInicio >= numeroLimiteFinal){
-        document.getElementById('de').value = '';
-        document.getElementById('ate').value = '';
-        document.getElementById('resultado').innerHTML = `<label class="texto__paragrafo"> O número inicial: ${numeroLimiteInicio} é maior que o número final: ${numeroLimiteFinal}, insira novos valores.`;
+    if (numeroLimiteInicio >= numeroLimiteFinal) {
+        alert('Campo "Do número" deve ser inferior ao campo "Até o número". Verifique!');
+        limparCampos();
+        return;
+    }
+
+    if (quantNumerosSorteados > (numeroLimiteFinal - numeroLimiteInicio + 1)) {
+        alert('Campo "Quantidade" deve ser menor ou igual ao intervalo informado no campo "Do número" até o campo "Até o número". Verifique!');
+        limparCampos();
         return;
     }
 
     for (let i = 0; i < quantNumerosSorteados; i++){
         numero = obterNumeroAleatorio(numeroLimiteInicio, numeroLimiteFinal);
-        if(listaSorteio.length == numeroLimiteFinal - numeroLimiteInicio){
-            numero = obterNumeroAleatorio();
-            listaSorteio.push(numero);
-            continue;
-        }
         while(listaSorteio.includes(numero)){
             numero = obterNumeroAleatorio(numeroLimiteInicio, numeroLimiteFinal);
         }
         listaSorteio.push(numero);
     }
-
     let resultado = document.getElementById('resultado');
     resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados: ${listaSorteio}</label>`
     console.log(`Lista sorteada: ${listaSorteio}`);
