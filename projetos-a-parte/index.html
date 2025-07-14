@@ -1,44 +1,56 @@
 <html>
 <body>
 <form id="formulario">
-    <label for="campoNome">Nome:</label>
-    <input type="text" id="nomeUsuario" name="nome">
+  <p>  </p>
+  <label for="campoNome">Nome:</label>
+  <input type="text" id="nomeUsuario" name="nome">
     
-    <label for="campoIdade">Idade:</label>
-    <input type="text" id="idadeUsuario" name="idade">
+  <label for="campoIdade">Idade:</label>
+  <input type="text" id="idadeUsuario" name="idade">
 
-    <label for="cargo">Cargo (horas;salario):</label>
-    <input type="text" id="cargoDeTrabalho" name="cargoTrabalho">
+  <label for="cargo">Cargo (horas;salario):</label>
+  <input type="text" id="cargoDeTrabalho" name="cargoTrabalho">
 
-    <button type="button" onclick="insiraValores()">Insira valores</button>
+  <button type="button" onclick="insiraValores()">Insira valores</button>
 
-    <div></div>
+  <p>    </p>
 
-    <label for="variosNumeros">Insira uma quantidade de números (separe com vírgula):</label>
-    <input type="text" id="numeros" name="listaNumeros">
+  <label for="variosNumeros">Insira uma quantidade de números (separe com vírgula):</label>
+  <input type="text" id="numeros" name="listaNumeros">
 
-    <button type="button" onclick="listaDeNumeros()"> Insira no console</button>
+  <button type="button" onclick="listaDeNumeros()"> Insira no console</button>
 
-    <div>
-      
-    </div>
+  <p></p>
 
-    <label for="primeiroNumero">N1:</label>
-    <input type="text" id="numero1" name="n1">
-    
-    <label for="segundoNumero">N2:</label>
-    <input type="text" id="numero2" name="n2">
+  <label for="n1Calculadora">Valor 1:</label>
+  <input type="text" id="calculadora1" name="numberCalc1">
 
-    <button type="button" onclick="somaValores()">Soma valores</button>
+  <label for="n2Calculadora">Valor 2:</label>
+  <input type="text" id="calculadora2" name="numberCalc1">
 
-    
-    
+  <button type="button" onclick="multiplicacao()"> x </button>
+  <button type="button" onclick="divisao()"> ÷ </button>
+  <button type="button" onclick="soma()"> + </button>
+  <button type="button" onclick="subtracao()"> - </button>
+  <button type="button" onclick="zerar()"> zerar </button>
+
+  <div id='resultadoCalc'><span>O resultado é: ________ </span></div>
+  <p></p>
+
+  <label for="grau">Coloque o grau: </label>
+  <input type="text" id="grau" name="conversao">
+
+  <button type="button" onclick="celsius()"> Celsius </button>
+  <button type="button" onclick="fahrenheit()"> Fahrenheit </button>
+  <button type="button" onclick="zerar()"> zerar </button>
   
+  <div id='resultadoGrau'><span>O resultado é: ________ </span></div>
+  <p></p>
+
+
   <div id='respostaNome'><span>Seu nome: [Seu nome] </span></div>
 
   <div id='respostaIdade'><span>Sua idade: [Idade] </span></div>
-
-  <div id='respostaSoma'><span>A soma de n1 e n2 é: [resultado] </span></div>
 
   <div id='respostaCargo'><span>Seu trabalho: [Cargo] </span></div>
 

@@ -82,13 +82,79 @@ function listaDeNumeros(){
     console.log(arrayNumeros);
     
 }
-//Função que recebe dois valores de números e soma
-function somaValores(){
-    //recupera os valores do html e soma eles
-    let n1 = parseInt(document.getElementById('numero1').value);
-    let n2 = parseInt(document.getElementById('numero2').value);
-    let resultado = n1+n2;
+//Função que torna o número inteiro e mostra no console
+//Também mostra se é par
+function tornandoInteiro(){
+    //pega valor inserido na somavalores()
+    let numero = document.getElementById('numero1').value;
+
+    //apresenta o número como string
+    console.log(`Esse número é uma string:`);
+    console.log(numero);
+
+    //apresenta o número inteiro 
+    numero = parseInt(numero);
+    console.log(`Esse número é um inteiro: `);
+    console.log(numero);
+
+    //confere se é impar ou par
+    if(numero % 2 == 0){
+        console.log(`O número ${numero} é par`);
+    }else{
+        console.log(`O número ${numero} é ímpar`);
+    }
+}
+
+//Função subtração
+function subtracao(){
+    let n1 = parseInt(document.getElementById('calculadora1').value);
+    let n2 = parseInt(document.getElementById('calculadora2').value);
+    let resposta = n1 - n2;
+    document.getElementById('resultadoCalc').textContent = `O resultado: ${resposta}`;
+}
+
+//função multiplicacao
+function multiplicacao(){
+    let n1 = parseInt(document.getElementById('calculadora1').value);
+    let n2 = parseInt(document.getElementById('calculadora2').value);
+    let resposta = n1 * n2;
+    document.getElementById('resultadoCalc').textContent = `O resultado: ${resposta}`;
+}
+//Função adição
+function soma(){
+    let n1 = parseInt(document.getElementById('calculadora1').value);
+    let n2 = parseInt(document.getElementById('calculadora2').value);
+    let resposta = n1 + n2;
+    document.getElementById('resultadoCalc').textContent = `O resultado: ${resposta}`;
+}
+
+//função multiplicacao
+function divisao(){
+    let n1 = parseInt(document.getElementById('calculadora1').value);
+    let n2 = parseInt(document.getElementById('calculadora2').value);
+    let resposta = n1 / n2;
+    document.getElementById('resultadoCalc').textContent = `O resultado é: ${resposta}`;
+}
+
+//função zerar
+function zerar(){
+    document.getElementById('calculadora1').value = '';
+    document.getElementById('calculadora2').value = '';
+    document.getElementById('grau').value = '';
     
-    //retorna a resposta conforme solicitado
-    document.getElementById('respostaSoma').textContent = `A soma de n1 e n2 é: ${resultado}`;
+    document.getElementById('resultadoCalc').textContent = `O resultado é: _____________`;
+    document.getElementById('resultadoGrau').textContent = `O resultado é: _____________`;
+
+}
+
+function celsius(){
+    let grau = parseInt(document.getElementById('grau').value);
+    let grauNovo = grau *1.8 + 32;
+    document.getElementById('resultadoGrau').textContent = `O resultado é: ${grauNovo}`;
+}
+
+function fahrenheit(){
+    let grau = parseInt(document.getElementById('grau').value);
+    let grauNovo = (grau -32) / 1.8;
+    document.getElementById('resultadoGrau').textContent = `O resultado é: ${grauNovo}`;
 }
