@@ -7,10 +7,43 @@
     <label for="campoIdade">Idade:</label>
     <input type="text" id="idadeUsuario" name="idade">
 
+    <label for="cargo">Cargo (horas;salario):</label>
+    <input type="text" id="cargoDeTrabalho" name="cargoTrabalho">
+
     <button type="button" onclick="insiraValores()">Insira valores</button>
+
+    <div></div>
+
+    <label for="variosNumeros">Insira uma quantidade de números (separe com vírgula):</label>
+    <input type="text" id="numeros" name="listaNumeros">
+
+    <button type="button" onclick="listaDeNumeros()"> Insira no console</button>
+
+    <div>
+      
+    </div>
+
+    <label for="primeiroNumero">N1:</label>
+    <input type="text" id="numero1" name="n1">
+    
+    <label for="segundoNumero">N2:</label>
+    <input type="text" id="numero2" name="n2">
+
+    <button type="button" onclick="somaValores()">Soma valores</button>
+
+    
+    
   
   <div id='respostaNome'><span>Seu nome: [Seu nome] </span></div>
+
   <div id='respostaIdade'><span>Sua idade: [Idade] </span></div>
+
+  <div id='respostaSoma'><span>A soma de n1 e n2 é: [resultado] </span></div>
+
+  <div id='respostaCargo'><span>Seu trabalho: [Cargo] </span></div>
+
+  <div id='resultadoSalario'><span>Seu salario: [Salario] </span></div>
+
 </form>
 
 <script src="teste.js"></script>

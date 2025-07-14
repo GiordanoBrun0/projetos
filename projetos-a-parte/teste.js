@@ -55,11 +55,40 @@ function ordenacaoNumeros(){
 
 //função de inserir valores nome e idade 
 function insiraValores(){
+    //Coloca em variaveis os valores incluidos no HTML
     let nome = document.getElementById('nomeUsuario').value;
     let idade = document.getElementById('idadeUsuario').value;
+    let textoCargo = document.getElementById('cargoDeTrabalho').value;
+    let cargo = textoCargo.split(';')[0];
+    let salario = parseInt(textoCargo.split(';')[1]);
 
+    //Separa as respostas e reorganiza no HTML
     document.getElementById('respostaNome').textContent = `Seu nome: ${nome}`;
     document.getElementById('respostaIdade').textContent = `Sua idade: ${idade}`;
+    document.getElementById('respostaCargo').textContent = `Seu trabalho: ${cargo}`;
+    document.getElementById('resultadoSalario').textContent = `Seu salario: ${salario}`;
 
 }
 
+//coloca lista de números no console
+function listaDeNumeros(){
+    //recupera os valores incluidos 
+    let numero = document.getElementById('numeros').value.trim();
+
+    // separa eles pelas vírgulas e cria uma lista
+    const arrayNumeros = numero.split(',');
+
+    //insere números no console
+    console.log(arrayNumeros);
+    
+}
+//Função que recebe dois valores de números e soma
+function somaValores(){
+    //recupera os valores do html e soma eles
+    let n1 = parseInt(document.getElementById('numero1').value);
+    let n2 = parseInt(document.getElementById('numero2').value);
+    let resultado = n1+n2;
+    
+    //retorna a resposta conforme solicitado
+    document.getElementById('respostaSoma').textContent = `A soma de n1 e n2 é: ${resultado}`;
+}
