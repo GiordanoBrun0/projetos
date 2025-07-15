@@ -158,3 +158,43 @@ function fahrenheit(){
     let grauNovo = (grau -32) / 1.8;
     document.getElementById('resultadoGrau').textContent = `O resultado é: ${grauNovo}`;
 }
+
+function embaralha (lista){
+    for (let i = lista.length; i; i--){
+        const iAleatorio = Math.floor(Math.random()*i);
+
+        [lista[i - 1], lista[iAleatorio]] = [lista[iAleatorio],lista[i - 1]];
+    }
+}
+
+//função para remover duplicatas de uma lista
+function removerDuplicatas(lista){
+    for(let i = 0; i < lista.length; i++){
+        for(let j = i + 1; j < lista.length; j++){
+            if(lista[i] == lista [j]){
+                lista.splice(j,1);
+                j--;
+            }
+        }
+    }
+}
+
+//teste de concatenação de duas variaveis
+minhaLista = [1,2,3,4,5];
+listaSeguinte = [4,5,6,6];
+novaLista = minhaLista.concat(listaSeguinte);
+console.log(minhaLista);
+console.log(listaSeguinte);
+console.log(novaLista);
+
+//teste de retirada de último elemento de uma lista
+novaLista.splice(novaLista.length - 1,1);
+console.log(novaLista);
+
+//teste de embaralhamento
+embaralha(novaLista);
+console.log(novaLista);
+
+//teste de remoção de duplicatas
+removerDuplicatas(novaLista);
+console.log(novaLista);
