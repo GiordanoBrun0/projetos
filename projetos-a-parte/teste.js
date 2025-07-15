@@ -178,6 +178,142 @@ function removerDuplicatas(lista){
         }
     }
 }
+function numeroPositivo(numero){
+    let mensagem = '';
+    if(numero > 0){
+        mensagem = 'O número é positivo';
+    }else if(numero < 0){
+        mensagem = 'O número é negativo';
+    }else{
+        mensagem = 'O número é zero';
+    }
+    console.log(mensagem);
+}
+
+function maiorIdade(idade){
+    let mensagem = ''
+    if(idade >= 18){
+        mensagem = `'É maior de idade!'`;
+    }else{
+        mensagem = 'É menor de idade!';
+    }
+    console.log(mensagem);
+}
+//função que verifica se há valor na string
+function stringVazia(texto){
+    let mensagem = ''
+    if (texto == ''){
+        mensagem = 'String vazia';
+    }else{
+        mensagem = texto;
+    }
+    console.log(mensagem);
+}
+
+function anoBissexto(ano){
+    let verificacao = (ano % 4 == 0 && ano % 100 !== 0) || ano % 400 == 0;
+    if (verificacao){
+        console.log(ano + ' é um ano bissexto.');
+    }else{
+        console.log(ano + ' não é ano bissexto.');
+    }
+}
+
+function mediaDoisNumeros(n1, n2){
+    if(n1 == 0 || n2 == 0){
+        console.log('Insira o número em ambas as variaveis.');
+        return;
+    }
+    let media = (n1 + n2) / 2;
+    console.log(`A média de ${n1} e ${n2} é: ${media}.`);
+}
+
+function listaTamanho(lista){
+    console.log('O tamanho da lista é: ' + lista.length);
+}
+
+function procurandoNaLista(elemento, lista) {
+    if (lista.includes(elemento)) {
+        let indices = [];
+        for (let i = 0; i < lista.length; i++) {
+            if (lista[i] === elemento) {
+                indices.push(i);
+            }
+        }
+        const mensagem = indices.length > 1 ? 'nos índices' : 'no índice';
+        console.log(`O elemento está ${mensagem}: ${indices}`);
+    } else {
+        console.log("Não há esse elemento na lista.");
+    }
+}
+
+/*
+// Teste função de procurando na lista e seu tamanho
+let minhaList = [1, 2, 3, 4, 5];
+let procura = 4;
+procurandoNaLista(procura, minhaList);
+listaTamanho(minhaList);
+
+let listaSeguint = [4, 5, 6, 6];
+procura = 6;
+procurandoNaLista(procura, listaSeguint);
+listaTamanho(listaSeguint);
+
+//teste de média de dois números
+let n1 = 0;
+let n2 = 1;
+console.log(n1, n2); 
+mediaDoisNumeros(n1, n2);
+
+n1 = 1;
+n2 = 0;
+console.log(n1, n2); 
+mediaDoisNumeros(n1, n2);
+
+n1 = 7;
+n2 = 8;
+console.log(n1, n2); 
+mediaDoisNumeros(n1, n2);
+
+//teste de função ano bissexto
+let ano = 2020;
+anoBissexto(ano);
+ano = 2024;
+anoBissexto(ano);
+ano = 2100;
+anoBissexto(ano);
+ano = 2000;
+anoBissexto(ano);
+
+//teste de função string vazia
+let texto = '';
+console.log(`Valor da String 1: `);
+stringVazia(texto);
+texto = 'E aí, tudo bem?';
+console.log(`Valor da String 2: `);
+stringVazia(texto);
+
+//teste de função maior de idade
+let idade = 18;
+console.log(idade);
+maiorIdade(idade);
+idade = 35;
+console.log(idade);
+maiorIdade(idade);
+idade = 12;
+console.log(idade);
+maiorIdade(idade);
+
+//teste de função número positivo
+let n = -1;
+console.log(n);
+numeroPositivo(n);
+n = 55;
+console.log(n);
+numeroPositivo(n);
+n = 0;
+console.log(n);
+numeroPositivo(n);
 
 //teste de concatenação de duas variaveis
 minhaLista = [1,2,3,4,5];
@@ -197,4 +333,4 @@ console.log(novaLista);
 
 //teste de remoção de duplicatas
 removerDuplicatas(novaLista);
-console.log(novaLista);
+console.log(novaLista);*/
